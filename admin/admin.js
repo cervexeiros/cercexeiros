@@ -140,7 +140,7 @@ function pintarLista() {
   const posts = [...estado.posts].sort((a, b) => (b.data || '').localeCompare(a.data || ''));
   $('lista').innerHTML = posts.length ? posts.map(p => `
     <div class="item">
-      <img src="../${X.esc(p.portada || 'assets/img/og-cervexeiros.jpg')}" alt="">
+      <img src="${X.esc(X.rutaImaxe('../', p.portada || 'assets/img/og-cervexeiros.jpg'))}" alt="">
       <div>
         <h3>${X.esc(p.titulo)}</h3>
         <p><span class="selo ${p.borrador ? 'borrador' : ''}">${p.borrador ? 'Borrador' : 'Publicada'}</span>${X.dataLonga(p.data)} · ${X.esc(p.autor)}</p>
@@ -365,7 +365,7 @@ function abrirEditor(post) {
   $('autores').innerHTML = [...new Set([...cfg.autores, ...estado.posts.map(x => x.autor)])].map(a => `<option value="${X.esc(a)}">`).join('');
   $('slug-base').textContent = cfg.url.replace(/^https?:\/\//, '') + '/blog/';
   ed.innerHTML = (p.contido || '').replace(/(src|href)="@\//g, '$1="../');
-  pintarPortada(p.portada ? '../' + p.portada : '');
+  pintarPortada(p.portada ? X.rutaImaxe('../', p.portada) : '');
   $('panel-borrar').hidden = !post;
   aviso('');
   mostrar('editor');
@@ -427,7 +427,7 @@ function actualizarPrevias() {
   $('previa-google').innerHTML = `<div class="g-url">${X.esc(host)} › blog › ${X.esc(p.slug || 'slug')}</div>
     <div class="g-titulo">${X.esc((tSeo + ' · ' + cfg.nome).slice(0, 62))}${(tSeo + ' · ' + cfg.nome).length > 62 ? '…' : ''}</div>
     <div class="g-desc">${X.esc(X.dataLonga(p.data || new Date().toISOString()))} — ${X.esc(dSeo.slice(0, 158))}${dSeo.length > 158 ? '…' : ''}</div>`;
-  const ogSrc = estado.portadaNova ? estado.portadaNova.og.url : (p.portada ? '../' + X.ogDe(p) : '');
+  const ogSrc = estado.portadaNova ? estado.portadaNova.og.url : (p.portada ? X.rutaImaxe('../', X.ogDe(p)) : '');
   $('previa-whatsapp').innerHTML = `<div class="burbulla"><div class="tarxeta-wa">${ogSrc ? `<img src="${X.esc(ogSrc)}" alt="">` : '<img alt="">'}
     <div><div class="wa-titulo">${X.esc(tSeo)}</div><div class="wa-desc">${X.esc(dSeo)}</div><div class="wa-dominio">${X.esc(host)}</div></div></div>
     <div class="wa-ligazon">${X.esc(url)}</div></div>`;
@@ -516,7 +516,7 @@ $('gardar').addEventListener('click', async () => {
   if (estado.portadaNova) {
     const { portada, og } = estado.portadaNova;
     p.portada = `${cartafol}/portada-${selo}.jpg`; p.og = `${cartafol}/og-${selo}.jpg`;
-    p.portadaAncho = portada.ancho; p.portadaAlto = portada.alto;
+    p.portadaAncho = portada.ancho; p.portadaAlto = portada.alto; p.portadaCredito = ''; p.portadaCreditoUrl = '';
     ficheiros[p.portada] = { base64: base64De(portada.url) };
     ficheiros[p.og] = { base64: base64De(og.url) };
   }

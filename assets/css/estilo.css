@@ -227,3 +227,4 @@ p, li, figcaption { overflow-wrap: anywhere; }
 .form-ok { background: var(--branco); border: 3px solid var(--azul-nocturno); border-radius: var(--raio); box-shadow: var(--sombra); padding: 32px; }
 .form-ok h3 { color: var(--verde-lupulo); }
 #formulario, #grazas { scroll-margin-top: 96px; }
+.portada-entrada .credito { font-size: .8rem; font-style: normal; color: var(--texto-suave); padding: 6px 12px; }

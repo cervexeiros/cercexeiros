@@ -31,7 +31,9 @@ export function publicadas(posts) {
   return posts.filter(p => !p.borrador).sort((a, b) => (b.data + (b.slug || '')).localeCompare(a.data + (a.slug || '')));
 }
 
-const abs = (cfg, ruta) => cfg.url.replace(/\/$/, '') + '/' + String(ruta || '').replace(/^\//, '');
+const abs = (cfg, ruta) => /^https?:\/\//.test(ruta) ? ruta : cfg.url.replace(/\/$/, '') + '/' + String(ruta || '').replace(/^\//, '');
+// As imaxes poden estar no repositorio (ruta relativa) ou noutro sitio (URL completa)
+export const rutaImaxe = (raiz, r) => /^https?:\/\//.test(r) ? r : raiz + r;
 
 // Cambia o prefixo "@/" das imaxes e ligazóns internas polo camiño relativo á raíz
 export const ogDe = p => p.og || String(p.portada).replace(/portada([^/]*)\.jpg$/, 'og$1.jpg');
@@ -124,7 +126,7 @@ ${corpo}
 
 export function tarxetas(posts, raiz, n = Infinity) {
   return publicadas(posts).slice(0, n).map(p => `<a class="nova" href="${raiz}blog/${p.slug}/">
-  <img src="${raiz}${esc(p.portada)}" alt="" loading="lazy" width="${p.portadaAncho || 1200}" height="${p.portadaAlto || 900}">
+  <img src="${esc(rutaImaxe(raiz, p.portada))}" alt="" loading="lazy" width="${p.portadaAncho || 1200}" height="${p.portadaAlto || 900}">
   <div><time datetime="${p.data}">${dataLonga(p.data)}</time><h3>${esc(p.titulo)}</h3><p>${esc(p.extracto)}</p></div>
 </a>`).join('\n');
 }
@@ -178,7 +180,7 @@ ${jsonld}`;
 </header>
 <div class="bloque">
   <div class="envoltorio artigo">
-    <figure class="foto portada-entrada"><img src="${raiz}${esc(post.portada)}" alt="${esc(post.portadaAlt || post.titulo)}" width="${post.portadaAncho || 1200}" height="${post.portadaAlto || 900}" fetchpriority="high"></figure>
+    <figure class="foto portada-entrada"><img src="${esc(rutaImaxe(raiz, post.portada))}" alt="${esc(post.portadaAlt || post.titulo)}" width="${post.portadaAncho || 1200}" height="${post.portadaAlto || 900}" fetchpriority="high">${post.portadaCredito ? `<figcaption class="credito">Foto: ${post.portadaCreditoUrl ? `<a href="${esc(post.portadaCreditoUrl)}" rel="noopener">${esc(post.portadaCredito)}</a>` : esc(post.portadaCredito)}</figcaption>` : ''}</figure>
     <p class="entradilla">${esc(post.extracto)}</p>
     <div class="contido-entrada">
 ${resolverContido(post.contido, raiz)}
