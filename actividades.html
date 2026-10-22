@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actividades · Cervexeiros Caseiros Pontevedra</title>
+<meta name="description" content="Actividades e novidades da Asociación de Cervexeiros Caseiros de Pontevedra.">
+<meta property="og:title" content="Actividades · Cervexeiros Caseiros Pontevedra">
+<meta property="og:description" content="Actividades e novidades da Asociación de Cervexeiros Caseiros de Pontevedra.">
+<meta property="og:image" content="https://cervexeirospontevedra.es/assets/img/logo-accp.png">
+<meta name="theme-color" content="#0B2A4A">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700..800&family=Figtree:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+<a class="saltar" href="#contido">Saltar ao contido</a>
+<header class="cabeceira">
+  <div class="envoltorio">
+    <a class="marca" href="index.html">
+      <img src="assets/img/logo-accp.webp" alt="" width="56" height="56">
+      <span>Cervexeiros Caseiros<small>Pontevedra</small></span>
+    </a>
+    <button class="menu-boton" aria-expanded="false" aria-controls="menu">☰ Menú</button>
+    <nav class="menu" id="menu" aria-label="Menú principal"><ul><li><a href="index.html">Inicio</a></li><li><a href="quen-somos.html">Quen somos</a></li><li><a href="actividades.html" aria-current="page">Actividades</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="faite-socio.html" class="destacado">Faite socio/a</a></li></ul></nav>
+  </div>
+</header>
+<main id="contido">
+
+<section class="cabeza-paxina">
+  <div class="envoltorio">
+    <p class="antetitulo">Actividades e novidades</p>
+    <h1>Que andamos a facer</h1>
+    <p>Obradoiros, catas, feiras, elaboracións… Aquí contamos todo o que se coce (e fermenta) na asociación. Para o día a día, síguenos en <a href="https://www.instagram.com/cervexeiros/" rel="noopener" style="color:var(--verde-loro)">Instagram</a>.</p>
+  </div>
+  <div class="garabatos" role="presentation"></div>
+</section>
+<section class="bloque">
+  <div class="envoltorio">
+    <div class="novas">
+<a class="nova" href="novidades/feira-petin-2025.html"><img src="https://cervexeiros.wordpress.com/wp-content/uploads/2025/07/img_2218.jpg?w=1000" alt="" loading="lazy"><div><time datetime="2025-07-22">22 de xullo de 2025</time><h3>Feira de Petín 2025</h3><p>A nosa primeira feira: Petín, o comezo do camiño. Montamos o noso primeiro posto e saímos ao encontro da xente.</p></div></a>
+<a class="nova" href="novidades/obradoiros-fermentados.html"><img src="assets/img/vantaxes.webp" alt="" loading="lazy"><div><time datetime="2025-07-18">18 de xullo de 2025</time><h3>Obradoiros de cervexa e outros fermentados</h3><p>Gústache aprender facendo? Talleres de cervexa, pan, kombucha e salsas fermentadas para todos os niveis.</p></div></a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="pe">
+  <div class="envoltorio">
+    <img src="assets/img/logo-accp.webp" alt="Logo de Cervexeiros Caseiros Pontevedra" width="84" height="84">
+    <div>
+      <p class="lema-pe">Feito con amor, lúpulo e un chisquiño de canallada.</p>
+      <p>Correo: <a href="mailto:cervexeiroscaseirospontevedra@gmail.com">cervexeiroscaseirospontevedra@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/cervexeiros/" rel="noopener">@cervexeiros</a></p>
+    </div>
+    <a class="boton" href="faite-socio.html">Faite socio/a</a>
+    <p class="legal">© 2026 Asociación de Cervexeiros Caseiros de Pontevedra (ACCP) · Asociación sen ánimo de lucro · Pontevedra, Galicia</p>
+  </div>
+</footer>
+<script>
+  const b = document.querySelector('.menu-boton'), m = document.getElementById('menu');
+  b.addEventListener('click', () => { const a = m.classList.toggle('aberto'); b.setAttribute('aria-expanded', a); });
+</script>
+</body>
+</html>
