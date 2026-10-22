@@ -244,7 +244,7 @@ export const PAXINAS = [
 ];
 
 export function paxinaEstatica(def, fragmento, cfg, posts) {
-  let corpo = fragmento;
+  let corpo = fragmento.split('__URL__').join(cfg.url.replace(/\/$/, ''));
   if (def.fragmento === 'inicio') corpo = corpo.replace('<!--NOVIDADES-->', tarxetas(posts, '', 3));
   const extra = def.fragmento === 'inicio' ? ld({ '@context': 'https://schema.org', ...organizacion(cfg), '@type': 'NGO', email: cfg.email, address: { '@type': 'PostalAddress', addressLocality: 'Pontevedra', addressRegion: 'Galicia', addressCountry: 'ES' } }) : '';
   return layout({

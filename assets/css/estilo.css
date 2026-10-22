@@ -207,3 +207,23 @@ p, li, figcaption { overflow-wrap: anywhere; }
 .compartir p { margin: 0; }
 .compartir .boton { padding: 9px 20px; }
 .boton--claro { background: var(--branco); }
+
+/* Formulario de socios */
+.formulario-socio { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
+@media (max-width: 760px) { .formulario-socio { grid-template-columns: 1fr; } }
+.form { background: var(--branco); border: 3px solid var(--azul-nocturno); border-radius: var(--raio); box-shadow: var(--sombra); padding: clamp(20px, 4vw, 32px); display: grid; gap: 18px; }
+.form .campo label, .form label { display: block; font-weight: 800; margin-bottom: 6px; }
+.form label span { font-weight: 400; color: var(--texto-suave); }
+.form input[type=text], .form input[type=email], .form input[type=tel], .form select, .form textarea {
+  width: 100%; font: inherit; color: var(--texto); background: var(--crema); border: 2px solid var(--azul-nocturno); border-radius: 12px; padding: 12px 14px;
+}
+.form input:focus, .form select:focus, .form textarea:focus { outline: 3px solid var(--amarelo-cervexa); outline-offset: 1px; }
+.form .aceptar { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; font-size: .95rem; }
+.form .aceptar input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: var(--verde-lupulo); }
+.form .boton { justify-self: start; cursor: pointer; font: inherit; font-weight: 800; }
+.form .boton:disabled { opacity: .6; cursor: wait; }
+.form-erro { margin: 0; padding: 10px 14px; border-radius: 10px; background: #fdecea; color: #8a1c13; font-weight: 700; }
+.mel { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-ok { background: var(--branco); border: 3px solid var(--azul-nocturno); border-radius: var(--raio); box-shadow: var(--sombra); padding: 32px; }
+.form-ok h3 { color: var(--verde-lupulo); }
+#formulario, #grazas { scroll-margin-top: 96px; }
