@@ -228,3 +228,29 @@ p, li, figcaption { overflow-wrap: anywhere; }
 .form-ok h3 { color: var(--verde-lupulo); }
 #formulario, #grazas { scroll-margin-top: 96px; }
 .portada-entrada .credito { font-size: .8rem; font-style: normal; color: var(--texto-suave); padding: 6px 12px; }
+
+/* Calendario de Advento */
+.advento-heroe h1 { font-size: clamp(2.6rem, 6.5vw, 4.4rem); }
+.advento-sub { opacity: .85; font-size: 1.05rem !important; }
+.advento-portada { margin: 0; justify-self: center; width: min(320px, 70%); transform: rotate(4deg); border: 4px solid var(--amarelo-cervexa); border-radius: 18px; overflow: hidden; box-shadow: 0 14px 0 rgba(0,0,0,.25); }
+.advento-portada img { width: 100%; }
+.adiviña { display: grid; justify-items: center; gap: 14px; text-align: center; }
+.adiviña-tarxeta { position: relative; width: min(300px, 80%); aspect-ratio: 480 / 853; padding: 0; border: 3px solid var(--azul-nocturno); border-radius: 18px; overflow: hidden; background: var(--branco); box-shadow: var(--sombra); cursor: pointer; transform: rotate(-2deg); transition: transform .2s; }
+.adiviña-tarxeta:hover { transform: rotate(0) scale(1.02); }
+.adiviña-tarxeta img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .5s; }
+.adiviña-tarxeta .destapada { opacity: 0; }
+.adiviña-tarxeta[aria-pressed="true"] .destapada { opacity: 1; }
+.adiviña-tarxeta[aria-pressed="true"] .agochada { opacity: 0; }
+.adiviña-texto { margin: 0; max-width: 34ch; }
+.advento-galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; margin-top: 1.5em; }
+.advento-galeria img { border: 3px solid var(--azul-nocturno); border-radius: 14px; box-shadow: var(--sombra); background: var(--branco); }
+.advento-galeria img:nth-child(odd) { transform: rotate(-1.5deg); }
+.advento-galeria img:nth-child(even) { transform: rotate(1.5deg); }
+.faq details { background: var(--crema); border: 2px solid var(--azul-nocturno); border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.faq summary { font-weight: 800; cursor: pointer; font-size: 1.1rem; }
+.faq details p { margin: .6em 0 0; }
+.advento-aviso { margin-top: 1.5em; font-size: .9rem; color: var(--texto-suave); text-align: center; }
+.advento-promo .advento-promo-img { width: min(260px, 60%); justify-self: center; transform: rotate(3deg); border: 4px solid var(--amarelo-cervexa); border-radius: 16px; }
+@media (prefers-reduced-motion: reduce) { .adiviña-tarxeta img { transition: none; } }
+.advento-galeria { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 760px) { .advento-galeria { grid-template-columns: repeat(2, 1fr); gap: 14px; } .advento-portada { width: min(240px, 65%); } }

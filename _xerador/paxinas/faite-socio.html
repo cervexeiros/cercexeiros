@@ -41,7 +41,7 @@
         <li>Paga a cota anual de 20 € en efectivo ou por transferencia. Os datos bancarios mandámolos por correo.</li>
         <li>Envía o xustificante a <a href="mailto:cervexeiroscaseirospontevedra@gmail.com">cervexeiroscaseirospontevedra@gmail.com</a> e… benvid@ á familia!</li>
       </ol>
-      <div class="botons"><a class="boton" href="#formulario" id="ir-formulario">Quero ser socio/a</a></div>
+      <div class="botons"><a class="boton" href="#formulario" data-ir-formulario="formulario">Quero ser socio/a</a></div>
     </div>
     <figure class="foto"><img src="assets/img/carne-socio.webp" alt="Carné de socio/a da asociación, tempada 2026" loading="lazy"><figcaption>O teu carné de socio/a. Feito con amor, lúpulo e un chisquiño de canallada.</figcaption></figure>
   </div>
@@ -54,7 +54,7 @@
       <h2>Faite socio/a</h2>
       <p>Déixanos os teus datos e a secretaría escribirache para rematar a inscrición.</p>
     </div>
-    <form id="form-socio" class="form" action="https://formsubmit.co/cervexeiroscaseirospontevedra@gmail.com" method="POST" novalidate>
+    <form id="form-socio" class="form form-correo" data-asunto="Nova solicitude de socio/a" data-ok="grazas" action="https://formsubmit.co/cervexeiroscaseirospontevedra@gmail.com" method="POST" novalidate>
       <input type="hidden" name="_subject" value="Nova solicitude de socio/a desde a web">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -63,7 +63,7 @@
 
       <div class="campo">
         <label for="s-nome">Nome e apelidos <span>(obrigatorio)</span></label>
-        <input id="s-nome" name="Nome" type="text" autocomplete="name" required>
+        <input id="s-nome" name="Nome" type="text" autocomplete="name" required data-erro="Escribe o teu nome.">
       </div>
       <div class="campo">
         <label for="s-email">Correo electrónico <span>(obrigatorio)</span></label>
@@ -88,7 +88,7 @@
         <label for="s-detalles">Outros detalles</label>
         <textarea id="s-detalles" name="Outros detalles" rows="4" placeholder="Fas cervexa xa? Que che apetece aprender?"></textarea>
       </div>
-      <label class="aceptar"><input type="checkbox" id="s-privacidade" name="Acepta a política de privacidade" value="Si" required> Acepto que a asociación garde estes datos para xestionar a miña alta e informarme das súas actividades.</label>
+      <label class="aceptar"><input type="checkbox" id="s-privacidade" name="Acepta a política de privacidade" value="Si" required data-erro="Tes que aceptar o uso dos datos para poder darte de alta."> Acepto que a asociación garde estes datos para xestionar a miña alta e informarme das súas actividades.</label>
       <p class="form-erro" id="s-erro" role="alert" hidden></p>
       <button class="boton" type="submit">Enviar solicitude</button>
     </form>
@@ -99,36 +99,5 @@
   </div>
 </section>
 
-<script>
-(() => {
-  const f = document.getElementById('form-socio'), ok = document.getElementById('grazas'), erro = document.getElementById('s-erro');
-  const amosarOk = () => { f.hidden = true; ok.hidden = false; ok.scrollIntoView({ block: 'center' }); };
-  if (location.hash === '#grazas') amosarOk();
-  document.getElementById('ir-formulario').addEventListener('click', e => {
-    e.preventDefault(); document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => document.getElementById('s-nome').focus({ preventScroll: true }), 500);
-  });
-  f.addEventListener('submit', async e => {
-    e.preventDefault(); erro.hidden = true;
-    const mal = [...f.querySelectorAll('[required]')].find(c => !c.checkValidity());
-    if (mal) {
-      const msx = { 's-nome': 'Escribe o teu nome.', 's-email': 'Escribe un correo electrónico válido.', 's-tel': 'Escribe un teléfono válido (polo menos 9 números).', 's-privacidade': 'Tes que aceptar o uso dos datos para poder darte de alta.' };
-      erro.textContent = msx[mal.id] || 'Revisa os campos obrigatorios.'; erro.hidden = false; mal.focus(); return;
-    }
-    const b = f.querySelector('button[type=submit]'); b.disabled = true; b.textContent = 'Enviando…';
-    const datos = new FormData(f);
-    datos.set('_subject', 'Nova solicitude de socio/a: ' + datos.get('Nome'));
-    datos.set('_replyto', datos.get('email'));
-    try {
-      const r = await fetch(f.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', body: datos, headers: { Accept: 'application/json' } });
-      const j = await r.json().catch(() => ({}));
-      if (!r.ok || String(j.success) === 'false') throw new Error(j.message || 'Erro ' + r.status);
-      amosarOk();
-    } catch (err) {
-      erro.innerHTML = 'Non puidemos enviar a solicitude. Proba de novo ou escríbenos a <a href="mailto:cervexeiroscaseirospontevedra@gmail.com">cervexeiroscaseirospontevedra@gmail.com</a>.';
-      erro.hidden = false; b.disabled = false; b.textContent = 'Enviar solicitude';
-    }
-  });
-})();
-</script>
+<script src="assets/js/formulario.js" defer></script>
 
