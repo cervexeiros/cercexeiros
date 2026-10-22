@@ -242,7 +242,7 @@ export const PAXINAS = [
   { ficheiro: 'index.html', fragmento: 'inicio', actual: '', titulo: '', descricion: null },
   { ficheiro: 'quen-somos.html', fragmento: 'quen-somos', actual: 'quen-somos.html', titulo: 'Quen somos', descricion: 'Quen somos: a Asociación de Cervexeiros Caseiros de Pontevedra, a nosa misión, visión e valores.' },
   { ficheiro: 'faite-socio.html', fragmento: 'faite-socio', actual: 'faite-socio.html', titulo: 'Faite socio/a', descricion: 'Faite socio/a da Asociación de Cervexeiros Caseiros de Pontevedra por 20 € ao ano: obradoiros, catas, elaboracións e compras conxuntas.' },
-  { ficheiro: 'calendario-advento.html', fragmento: 'calendario-advento', actual: null, titulo: 'Calendario de Advento cervexeiro 2026', descricion: '24 portiñas, 24 birras: encarga o calendario de Advento cervexeiro 2026 da Asociación de Cervexeiros Caseiros de Pontevedra.', imaxe: 'assets/advento/og-calendario-2026.jpg' },
+  { ficheiro: 'calendario-advento.html', fragmento: 'calendario-advento', actual: null, titulo: 'Calendario de Advento cervexeiro 2026', descricion: '24 portiñas, 24 birras: encarga o calendario de Advento cervexeiro 2026 da Asociación de Cervexeiros Caseiros de Pontevedra.', imaxe: 'assets/advento/og-calendario-2026.jpg', indexar: false },
   { ficheiro: 'contacto.html', fragmento: 'contacto', actual: 'contacto.html', titulo: 'Contacto', descricion: 'Contacta coa Asociación de Cervexeiros Caseiros de Pontevedra por correo ou Instagram.' },
 ];
 
@@ -252,7 +252,7 @@ export function paxinaEstatica(def, fragmento, cfg, posts) {
   const extra = def.fragmento === 'inicio' ? ld({ '@context': 'https://schema.org', ...organizacion(cfg), '@type': 'NGO', email: cfg.email, address: { '@type': 'PostalAddress', addressLocality: 'Pontevedra', addressRegion: 'Galicia', addressCountry: 'ES' } }) : '';
   return layout({
     cfg, raiz: '', actual: def.actual, titulo: def.titulo, descricion: def.descricion || cfg.descricion,
-    canonica: abs(cfg, def.ficheiro === 'index.html' ? '' : def.ficheiro), imaxe: def.imaxe, cabeceiraExtra: extra, corpo,
+    canonica: abs(cfg, def.ficheiro === 'index.html' ? '' : def.ficheiro), imaxe: def.imaxe, indexar: def.indexar !== false, cabeceiraExtra: extra, corpo,
   });
 }
 
@@ -280,7 +280,7 @@ export function redireccion(destinoAbs) {
 export function sitemap(posts, cfg) {
   const hoxe = new Date().toISOString().slice(0, 10);
   const urls = [
-    ['', hoxe, '1.0'], ['quen-somos.html', null, '0.7'], ['faite-socio.html', null, '0.8'], ['contacto.html', null, '0.5'], ['calendario-advento.html', hoxe, '0.9'], ['blog/', hoxe, '0.9'],
+    ['', hoxe, '1.0'], ['quen-somos.html', null, '0.7'], ['faite-socio.html', null, '0.8'], ['contacto.html', null, '0.5'], ['blog/', hoxe, '0.9'],
     ...publicadas(posts).map(p => [`blog/${p.slug}/`, String(p.actualizado || p.data).slice(0, 10), '0.8']),
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
