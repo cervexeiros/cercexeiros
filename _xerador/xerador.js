@@ -242,7 +242,7 @@ export const PAXINAS = [
   { ficheiro: 'index.html', fragmento: 'inicio', actual: '', titulo: '', descricion: null },
   { ficheiro: 'quen-somos.html', fragmento: 'quen-somos', actual: 'quen-somos.html', titulo: 'Quen somos', descricion: 'Quen somos: a Asociación de Cervexeiros Caseiros de Pontevedra, a nosa misión, visión e valores.' },
   { ficheiro: 'faite-socio.html', fragmento: 'faite-socio', actual: 'faite-socio.html', titulo: 'Faite socio/a', descricion: 'Faite socio/a da Asociación de Cervexeiros Caseiros de Pontevedra por 20 € ao ano: obradoiros, catas, elaboracións e compras conxuntas.' },
-  { ficheiro: 'calendario-advento.html', fragmento: 'calendario-advento', actual: null, titulo: 'Calendario de Advento cervexeiro 2026', descricion: '24 portiñas, 24 birras: encarga o calendario de Advento cervexeiro 2026 da Asociación de Cervexeiros Caseiros de Pontevedra.', imaxe: 'assets/advento/og-calendario-2026.jpg' },
+  { ficheiro: 'calendario-advento.html', fragmento: 'calendario-advento', actual: null, titulo: 'Calendario de Advento cervexeiro 2026', descricion: '24 portas, 24 cervexas e 24 historias. Preventa ata o 3 de novembro: 100 € coa cota de socio/a 2027 incluída.', imaxe: 'assets/advento/og-calendario-2026.jpg' },
   { ficheiro: 'contacto.html', fragmento: 'contacto', actual: 'contacto.html', titulo: 'Contacto', descricion: 'Contacta coa Asociación de Cervexeiros Caseiros de Pontevedra por correo ou Instagram.' },
 ];
 

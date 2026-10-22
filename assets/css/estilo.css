@@ -254,3 +254,21 @@ p, li, figcaption { overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) { .adiviña-tarxeta img { transition: none; } }
 .advento-galeria { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 760px) { .advento-galeria { grid-template-columns: repeat(2, 1fr); gap: 14px; } .advento-portada { width: min(240px, 65%); } }
+.advento-heroe .envoltorio + .envoltorio { display: block; margin-top: 32px; }
+.advento-caixa { margin: 0; border: 4px solid var(--amarelo-cervexa); border-radius: 18px; overflow: hidden; box-shadow: 0 14px 0 rgba(0,0,0,.25); background: #d9b98a; }
+.advento-caixa img { width: 100%; }
+.advento-caixa figcaption, .caixa-galeria figcaption { font-size: .9rem; font-style: italic; padding: 8px 14px; }
+.advento-caixa figcaption { background: var(--azul-nocturno); color: #c9d3dc; }
+.advento-prezo { display: inline-flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 8px; padding: 10px 18px; border: 3px dashed var(--amarelo-cervexa); border-radius: 14px; }
+.advento-prezo strong { font-family: var(--man); font-size: 2.4rem; line-height: 1; color: var(--amarelo-cervexa); }
+.advento-prezo span { font-weight: 700; }
+.advento-prezo--claro { border-color: var(--azul-nocturno); margin-bottom: 8px; }
+.advento-prezo--claro strong { color: var(--azul-nocturno); }
+.caixa-galeria { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 20px; margin-top: 1.5em; }
+.caixa-galeria figure { margin: 0; border: 3px solid var(--azul-nocturno); border-radius: 14px; overflow: hidden; box-shadow: var(--sombra); background: var(--branco); }
+.caixa-galeria img { width: 100%; height: 260px; object-fit: cover; }
+@media (max-width: 760px) { .caixa-galeria { grid-template-columns: 1fr 1fr; } .caixa-galeria figure:first-child { grid-column: 1 / -1; } .caixa-galeria img { height: 200px; } }
+.advento-nota { margin-top: 1.4em; padding: 14px 18px; background: var(--branco); border: 2px solid var(--azul-nocturno); border-radius: 14px; }
+.advento-promo .advento-promo-caixa { width: 100%; transform: rotate(-1.5deg); }
+.advento-heroe .advento-heroe-grid { display: block; }
+.advento-heroe > .envoltorio:first-child { grid-template-columns: 1fr; max-width: 860px; text-align: left; } .advento-heroe > .envoltorio:first-child p { max-width: 52ch; }
