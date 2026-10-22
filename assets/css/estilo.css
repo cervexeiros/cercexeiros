@@ -183,3 +183,4 @@ p, li, figcaption { overflow-wrap: anywhere; }
 .destaque .cota { font-family: var(--corpo); font-weight: 900; font-size: clamp(3.5rem, 10vw, 6rem); max-width: none; margin: 0; }
 .destaque .cota small { font-size: 1.1rem; font-weight: 800; }
 .heroe .antetitulo, .cabeza-paxina .antetitulo { color: var(--amarelo-cervexa); }
+.artigo .foto { margin: 0 0 1.6em; }
