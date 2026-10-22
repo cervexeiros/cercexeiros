@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Área privada · Cervexeiros Caseiros Pontevedra</title>
+<link rel="icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700..800&family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="barra">
+  <a class="marca" href="./"><img src="../assets/img/logo-accp.webp" alt="" width="40" height="40"><span>Área privada</span></a>
+  <div class="barra-dereita">
+    <span id="estado-sesion"></span>
+    <a href="../blog/" target="_blank" rel="noopener">Ver el blog ↗</a>
+    <button id="sair" class="btn-link" hidden>Cerrar sesión</button>
+  </div>
+</header>
+
+<main>
+  <!-- ACCESO -->
+  <section id="vista-acceso" class="vista caixa estreita" hidden>
+    <h1>Entrar al área privada</h1>
+    <p>Para editar el blog necesitas una <strong>llave de acceso de GitHub</strong> (un «token») de la cuenta de la asociación. Solo hay que crearla una vez.</p>
+    <form id="form-acceso">
+      <label for="token">Llave de acceso</label>
+      <input id="token" type="password" autocomplete="off" placeholder="github_pat_…" required>
+      <label class="check"><input id="lembrar" type="checkbox" checked> Recordarla en este dispositivo</label>
+      <p class="erro" id="erro-acceso" hidden></p>
+      <button class="btn" type="submit">Entrar</button>
+    </form>
+    <details class="axuda">
+      <summary>¿Cómo consigo la llave?</summary>
+      <ol>
+        <li>Entra en GitHub con la cuenta <strong>cervexeiros</strong>.</li>
+        <li>Abre <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Crear token (fine-grained)</a>.</li>
+        <li>Nombre: «Área privada web». Caducidad: la que prefiráis (por ejemplo, 1 año).</li>
+        <li>En <em>Repository access</em> elige <strong>Only select repositories</strong> y marca <strong>cercexeiros</strong>.</li>
+        <li>En <em>Permissions → Repository permissions</em>, pon <strong>Contents</strong> en <strong>Read and write</strong>.</li>
+        <li>Pulsa <em>Generate token</em>, copia la llave y pégala aquí.</li>
+      </ol>
+      <p>Guárdala en un sitio seguro: quien la tenga puede cambiar la web.</p>
+    </details>
+    <p class="pequeno"><a href="?demo">Probar en modo demostración</a> (no guarda nada de verdad).</p>
+  </section>
+
+  <!-- LISTA -->
+  <section id="vista-lista" class="vista" hidden>
+    <div class="cab-lista">
+      <h1>Entradas del blog</h1>
+      <button class="btn" id="nova">+ Nueva entrada</button>
+    </div>
+    <div id="lista" class="lista"></div>
+  </section>
+
+  <!-- EDITOR -->
+  <section id="vista-editor" class="vista" hidden>
+    <div class="cab-lista">
+      <button class="btn-link" id="volver">← Volver a la lista</button>
+      <div class="accions">
+        <button class="btn btn-sec" id="previa">Vista previa</button>
+        <button class="btn" id="gardar">Publicar</button>
+      </div>
+    </div>
+    <p class="aviso" id="aviso" hidden></p>
+
+    <div class="editor-grella">
+      <div class="col-principal">
+        <label for="f-titulo">Título</label>
+        <input id="f-titulo" class="titulo-grande" type="text" placeholder="Título de la entrada" maxlength="120">
+
+        <label>Contenido</label>
+        <div class="ferramentas" id="ferramentas" role="toolbar" aria-label="Formato del texto">
+          <select id="t-bloque" aria-label="Tipo de texto">
+            <option value="p">Párrafo</option>
+            <option value="h2">Título de sección</option>
+            <option value="h3">Subtítulo</option>
+            <option value="blockquote">Cita destacada</option>
+          </select>
+          <button type="button" data-cmd="bold" title="Negrita"><b>N</b></button>
+          <button type="button" data-cmd="italic" title="Cursiva"><i>K</i></button>
+          <button type="button" data-cmd="underline" title="Subrayado"><u>S</u></button>
+          <span class="sep"></span>
+          <div class="cores" id="cores" aria-label="Color del texto"></div>
+          <label class="cor-libre" title="Otro color"><input type="color" id="cor-libre" value="#c0392b"></label>
+          <span class="sep"></span>
+          <button type="button" data-cmd="insertUnorderedList" title="Lista">• Lista</button>
+          <button type="button" data-cmd="insertOrderedList" title="Lista numerada">1. Lista</button>
+          <span class="sep"></span>
+          <button type="button" id="t-ligazon" title="Añadir enlace">🔗 Enlace</button>
+          <button type="button" data-cmd="unlink" title="Quitar enlace">Quitar enlace</button>
+          <button type="button" id="t-imaxe" title="Subir foto">🖼 Foto</button>
+          <span class="sep"></span>
+          <button type="button" data-cmd="removeFormat" title="Quitar formato">Limpiar formato</button>
+          <button type="button" data-cmd="undo" title="Deshacer">↶</button>
+          <button type="button" data-cmd="redo" title="Rehacer">↷</button>
+        </div>
+        <div id="f-contido" class="contido-editor" contenteditable="true" aria-label="Contenido de la entrada"></div>
+        <p class="pequeno" id="contador-palabras">0 palabras</p>
+        <input type="file" id="ficheiro-imaxe" accept="image/*" hidden>
+      </div>
+
+      <aside class="col-lateral">
+        <div class="panel">
+          <h2>Publicación</h2>
+          <label for="f-estado">Estado</label>
+          <select id="f-estado"><option value="publicada">Publicada</option><option value="borrador">Borrador (no se ve en la web)</option></select>
+          <label for="f-data">Fecha de publicación</label>
+          <input id="f-data" type="date">
+          <label for="f-autor">Autor</label>
+          <input id="f-autor" type="text" list="autores">
+          <datalist id="autores"></datalist>
+          <label for="f-slug">Slug (dirección de la entrada)</label>
+          <div class="slug"><span id="slug-base"></span><input id="f-slug" type="text" pattern="[a-z0-9-]+"></div>
+          <p class="pequeno" id="slug-axuda">Solo minúsculas, números y guiones. Se rellena solo a partir del título.</p>
+          <label for="f-etiquetas">Etiquetas</label>
+          <input id="f-etiquetas" type="text" placeholder="obradoiros, catas, receitas">
+        </div>
+
+        <div class="panel">
+          <h2>Portada</h2>
+          <div id="portada-previa" class="portada-previa vacia">Sin portada</div>
+          <button type="button" class="btn btn-sec" id="b-portada">Subir portada</button>
+          <input type="file" id="ficheiro-portada" accept="image/*" hidden>
+          <label for="f-portada-alt">Descripción de la foto (texto alternativo)</label>
+          <input id="f-portada-alt" type="text" placeholder="Qué se ve en la foto">
+        </div>
+
+        <div class="panel">
+          <h2>Extracto</h2>
+          <textarea id="f-extracto" rows="3" maxlength="300" placeholder="Resumen de una o dos frases. Sale en la tarjeta del blog y al compartir por WhatsApp."></textarea>
+          <p class="pequeno"><span id="c-extracto">0</span> caracteres · ideal entre 70 y 160</p>
+        </div>
+
+        <div class="panel">
+          <h2>SEO (Google)</h2>
+          <label for="f-clave">Palabra clave principal</label>
+          <input id="f-clave" type="text" placeholder="p. ej. cerveza casera Pontevedra">
+          <label for="f-seo-titulo">Título para Google</label>
+          <input id="f-seo-titulo" type="text" maxlength="90" placeholder="Si lo dejas vacío, se usa el título">
+          <p class="pequeno"><span id="c-seo-titulo">0</span> caracteres · ideal entre 30 y 60</p>
+          <label for="f-seo-desc">Descripción para Google</label>
+          <textarea id="f-seo-desc" rows="3" maxlength="200" placeholder="Si la dejas vacía, se usa el extracto"></textarea>
+          <p class="pequeno"><span id="c-seo-desc">0</span> caracteres · ideal entre 70 y 160</p>
+          <p class="subtitulo">Así se verá en Google</p>
+          <div class="google" id="previa-google"></div>
+          <p class="subtitulo">Revisión</p>
+          <ul class="checklist" id="checklist"></ul>
+        </div>
+
+        <div class="panel">
+          <h2>Al compartir por WhatsApp</h2>
+          <div class="whatsapp" id="previa-whatsapp"></div>
+          <p class="pequeno">WhatsApp guarda la vista previa la primera vez que alguien comparte el enlace. Revisa portada, título y extracto antes de compartirlo.</p>
+        </div>
+
+        <div class="panel perigo" id="panel-borrar" hidden>
+          <h2>Eliminar</h2>
+          <p class="pequeno">Borra la entrada de la web. No se puede deshacer desde aquí.</p>
+          <button type="button" class="btn btn-perigo" id="borrar">Eliminar entrada</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<dialog id="d-ligazon">
+  <form method="dialog" id="form-ligazon">
+    <h2>Añadir enlace</h2>
+    <label for="l-url">Dirección (URL)</label>
+    <input id="l-url" type="text" placeholder="https://… o correo@ejemplo.com">
+    <label for="l-texto">Texto del enlace</label>
+    <input id="l-texto" type="text" placeholder="Si lo dejas vacío, se usa el texto seleccionado">
+    <div class="accions"><button value="cancel" class="btn btn-sec" formnovalidate>Cancelar</button><button value="ok" class="btn">Añadir</button></div>
+  </form>
+</dialog>
+
+<dialog id="d-imaxe">
+  <form method="dialog">
+    <h2>Foto</h2>
+    <img id="i-previa" alt="" class="i-previa">
+    <label for="i-alt">Descripción de la foto (texto alternativo)</label>
+    <input id="i-alt" type="text" placeholder="Qué se ve en la foto. Ayuda al SEO y a personas ciegas.">
+    <div class="accions"><button value="cancel" class="btn btn-sec" formnovalidate>Cancelar</button><button value="ok" class="btn">Insertar</button></div>
+  </form>
+</dialog>
+
+<dialog id="d-confirmar">
+  <form method="dialog">
+    <h2 id="c-titulo">¿Seguro?</h2>
+    <p id="c-texto"></p>
+    <div class="accions"><button value="cancel" class="btn btn-sec">Cancelar</button><button value="ok" class="btn btn-perigo" id="c-ok">Sí</button></div>
+  </form>
+</dialog>
+
+<dialog id="d-previa" class="d-previa">
+  <form method="dialog" class="previa-cab"><strong>Vista previa</strong><button class="btn btn-sec">Cerrar</button></form>
+  <iframe id="previa-iframe" title="Vista previa de la entrada"></iframe>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>

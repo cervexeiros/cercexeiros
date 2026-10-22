@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /_blog/
+Disallow: /_datos/
+Disallow: /_xerador/
+
+Sitemap: https://cervexeiros.github.io/cercexeiros/sitemap.xml

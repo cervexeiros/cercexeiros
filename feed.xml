@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Blog de Cervexeiros Caseiros Pontevedra</title>
+  <link>https://cervexeiros.github.io/cercexeiros/blog/</link>
+  <atom:link href="https://cervexeiros.github.io/cercexeiros/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Asociación de Cervexeiros Caseiros de Pontevedra: obradoiros, catas e comunidade arredor da cervexa feita na casa.</description>
+  <language>gl</language>
+  <item>
+    <title>Feira de Petín 2025</title>
+    <link>https://cervexeiros.github.io/cercexeiros/blog/feira-petin-2025/</link>
+    <guid>https://cervexeiros.github.io/cercexeiros/blog/feira-petin-2025/</guid>
+    <pubDate>Tue, 22 Jul 2025 12:00:00 GMT</pubDate>
+    <description>A nosa primeira feira: Petín, o comezo do camiño. Montamos o noso primeiro posto e saímos ao encontro da xente.</description>
+  </item>
+  <item>
+    <title>Obradoiros de cervexa e outros fermentados: aprende creando</title>
+    <link>https://cervexeiros.github.io/cercexeiros/blog/obradoiros-fermentados/</link>
+    <guid>https://cervexeiros.github.io/cercexeiros/blog/obradoiros-fermentados/</guid>
+    <pubDate>Fri, 18 Jul 2025 12:00:00 GMT</pubDate>
+    <description>Gústache aprender facendo? Talleres de cervexa, pan, kombucha e salsas fermentadas para todos os niveis.</description>
+  </item>
+</channel>
+</rss>

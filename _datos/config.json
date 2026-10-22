@@ -1,0 +1,14 @@
+{
+  "nome": "Cervexeiros Caseiros Pontevedra",
+  "nomeLegal": "Asociación de Cervexeiros Caseiros de Pontevedra",
+  "url": "https://cervexeiros.github.io/cercexeiros",
+  "descricion": "Asociación de Cervexeiros Caseiros de Pontevedra: obradoiros, catas e comunidade arredor da cervexa feita na casa.",
+  "email": "cervexeiroscaseirospontevedra@gmail.com",
+  "instagram": "https://www.instagram.com/cervexeiros/",
+  "repo": "cervexeiros/cercexeiros",
+  "rama": "main",
+  "autores": [
+    "Cervexeiros Caseiros Pontevedra"
+  ],
+  "imaxeSocial": "assets/img/og-cervexeiros.jpg"
+}
