@@ -56,7 +56,7 @@
         <a class="boton boton--secundario" href="#como-funciona">Como funciona?</a>
       </div>
     </div>
-    <figure class="advento-portada"><img src="assets/advento/calendario-2025.webp" alt="Cuberta do calendario de Advento cervexeiro da asociación, cos números do 1 ao 24" width="720" height="1280"></figure>
+    <figure class="advento-portada advento-portada--caixa"><img src="assets/advento/caixa-2026.webp" alt="Caixa do calendario de Advento cervexeiro 2026 con Papá Noel, un loro e a ponte de Pontevedra" width="1000" height="1000"></figure>
   </div>
   <div class="garabatos" role="presentation"></div>
 </section>
@@ -74,27 +74,7 @@
         <li>O agasallo perfecto (para outra persoa ou para ti, non te imos xulgar)</li>
       </ul>
     </div>
-    <div class="adiviña">
-      <button type="button" class="adiviña-tarxeta" id="adiviña" aria-pressed="false" aria-label="Destapar a birra do día 1">
-        <img class="agochada" src="assets/advento/dia1-agochada.webp" alt="Tarxeta do día 1 coa botella borrosa" width="480" height="853">
-        <img class="destapada" src="assets/advento/dia1.webp" alt="Tarxeta do día 1: Weihenstephaner Hefe Weissbier, de Alemaña" width="480" height="853">
-      </button>
-      <p class="adiviña-texto" id="adiviña-texto">Adiviñas cal foi a birra do día 1? <strong>Toca a tarxeta.</strong></p>
-    </div>
-  </div>
-</section>
-
-<section class="bloque bloque--branco">
-  <div class="envoltorio">
-    <p class="antetitulo">Así foi o de 2025</p>
-    <h2>Algunhas das que caeron o ano pasado</h2>
-    <p>O calendario de 2025 fixémolo con botellas de cervexa comercial. Foi un bo quentamento, pero este ano subimos o nivel.</p>
-    <div class="advento-galeria">
-      <img src="assets/advento/dia4.webp" alt="Día 4: Duvel, Strong Golden Ale de Bélxica" loading="lazy" width="480" height="853">
-      <img src="assets/advento/dia7.webp" alt="Día 7: BrewDog Punk IPA, de Escocia" loading="lazy" width="480" height="853">
-      <img src="assets/advento/dia9.webp" alt="Día 9: Samuel Smith Imperial Stout, de Inglaterra" loading="lazy" width="480" height="853">
-      <img src="assets/advento/dia13.webp" alt="Día 13: Sierra Nevada Pale Ale, de Estados Unidos" loading="lazy" width="480" height="853">
-    </div>
+    <figure class="foto foto--inclinada"><img src="assets/advento/latas.webp" alt="Torre de latas de cervexa craft de cores sobre unha mesa" loading="lazy" width="675" height="900"></figure>
   </div>
 </section>
 
@@ -106,8 +86,7 @@
       <p>Despois dun primeiro calendario con botellas de cervexa comercial, en 2026 imos a por todas: as 24 cervexas serán <strong>latas de cervexa craft</strong>, desas con etiquetas que parecen obras de arte e sabores que non atopas no súper.</p>
       <p>IPAs, hazies e algunha rareza que mellor non che contamos aínda. Fermentar, fermentarei…</p>
     </div>
-    <div class="latas-fotos">
-      <img src="assets/advento/latas.webp" alt="Torre de latas de cervexa craft de cores sobre unha mesa" loading="lazy" width="675" height="900">
+    <div class="latas-fotos latas-fotos--unha">
       <img src="assets/advento/latas-caixas.webp" alt="Caixas cheas de latas de cervexa listas para os calendarios" loading="lazy" width="675" height="900">
     </div>
   </div>
@@ -188,6 +167,28 @@
   </div>
 </section>
 
+<section class="bloque advento-2025">
+  <div class="envoltorio">
+    <div class="advento-2025-caixa">
+      <div class="advento-2025-texto">
+        <p class="antetitulo">E o ano pasado?</p>
+        <h3>O calendario de 2025</h3>
+        <p>Fixémolo con botellas de cervexa comercial. Foi un bo quentamento. Adiviñas cal foi a do día 1? Toca a tarxeta.</p>
+        <p class="adiviña-texto" id="adiviña-texto"></p>
+      </div>
+      <button type="button" class="adiviña-tarxeta" id="adiviña" aria-pressed="false" aria-label="Destapar a birra do día 1 de 2025">
+        <img class="agochada" src="assets/advento/dia1-agochada.webp" alt="Tarxeta do día 1 de 2025 coa botella borrosa" width="480" height="853">
+        <img class="destapada" src="assets/advento/dia1.webp" alt="Tarxeta do día 1 de 2025: Weihenstephaner Hefe Weissbier, de Alemaña" width="480" height="853">
+      </button>
+      <div class="advento-2025-miniaturas">
+        <img src="assets/advento/dia4.webp" alt="Día 4 de 2025: Duvel" loading="lazy" width="480" height="853">
+        <img src="assets/advento/dia7.webp" alt="Día 7 de 2025: BrewDog Punk IPA" loading="lazy" width="480" height="853">
+        <img src="assets/advento/dia9.webp" alt="Día 9 de 2025: Samuel Smith Imperial Stout" loading="lazy" width="480" height="853">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="bloque bloque--branco">
   <div class="envoltorio artigo">
     <p class="antetitulo">Preguntas (e respostas)</p>
@@ -211,7 +212,7 @@
   t.addEventListener('click', () => {
     const on = t.getAttribute('aria-pressed') !== 'true';
     t.setAttribute('aria-pressed', on);
-    txt.innerHTML = on ? 'Era unha <strong>Weihenstephaner Hefe Weissbier</strong>. Acertaches? Este ano, máis.' : 'Adiviñas cal foi a birra do día 1? <strong>Toca a tarxeta.</strong>';
+    txt.innerHTML = on ? 'Era unha <strong>Weihenstephaner Hefe Weissbier</strong>. Este ano, latas craft.' : '';
   });
 })();
 </script>

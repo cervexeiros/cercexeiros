@@ -264,3 +264,15 @@ p, li, figcaption { overflow-wrap: anywhere; }
 .advento-prezo strong { font-family: var(--man); font-size: 2.2rem; line-height: 1; color: var(--amarelo-cervexa); }
 .advento-prezo span { font-weight: 700; }
 @media (max-width: 760px) { .advento-prezo { justify-content: center; } }
+/* 2026 primeiro, 2025 en pequeno */
+.advento-portada--caixa { width: min(440px, 90%); transform: rotate(2deg); }
+.latas-fotos--unha { grid-template-columns: 1fr; max-width: 360px; justify-self: center; }
+.latas-fotos--unha img:last-child { transform: rotate(2deg); }
+.advento-2025 { padding: 32px 0; }
+.advento-2025-caixa { display: grid; grid-template-columns: 1fr auto auto; gap: 24px; align-items: center; background: var(--branco); border: 2px dashed var(--gris-fermentador); border-radius: 16px; padding: 18px 22px; }
+.advento-2025-caixa h3 { font-size: 1.3rem; margin: 0 0 .3em; }
+.advento-2025-caixa p { margin: 0 0 .4em; font-size: .95rem; color: var(--texto-suave); }
+.advento-2025-caixa .adiviña-tarxeta { width: 110px; transform: rotate(-2deg); box-shadow: 0 4px 0 rgba(11,42,74,.9); border-width: 2px; border-radius: 10px; }
+.advento-2025-miniaturas { display: flex; gap: 8px; }
+.advento-2025-miniaturas img { width: 80px; border: 2px solid var(--azul-nocturno); border-radius: 8px; }
+@media (max-width: 760px) { .advento-2025-caixa { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
