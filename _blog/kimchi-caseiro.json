@@ -1,0 +1,23 @@
+{
+  "titulo": "Kimchi caseiro: fermentamos fóra da cervexa",
+  "slug": "kimchi-caseiro",
+  "autor": "Cervexeiros Caseiros Pontevedra",
+  "data": "2026-03-03",
+  "portada": "assets/blog/kimchi-caseiro/portada.jpg",
+  "og": "assets/blog/kimchi-caseiro/og.jpg",
+  "portadaAncho": 672,
+  "portadaAlto": 504,
+  "portadaAlt": "Frasco hermético cheo de kimchi caseiro recén feito",
+  "extracto": "O 3 de marzo puxémonos co kimchi: repolo, rábano branco e chile coreano nun frasco para deixar traballar ás bacterias lácticas.",
+  "seoTitulo": "Como facer kimchi caseiro: a nosa elaboración paso a paso",
+  "seoDescricion": "Así fixemos kimchi caseiro o 3 de marzo de 2026: ingredientes, salgado, pasta de chile coreano, envasado e fermentación láctica, con consellos de seguridade.",
+  "palabraClave": "kimchi caseiro",
+  "etiquetas": [
+    "fermentados",
+    "kimchi",
+    "receitas"
+  ],
+  "borrador": true,
+  "actualizado": "2026-10-24T14:00:00+02:00",
+  "contido": "<p>Como cervexeiros, o noso é a fermentación, e a fermentación non remata na cervexa. O <strong>3 de marzo de 2026</strong> fixemos <strong>kimchi caseiro</strong>, ese fermentado coreano picante que vai igual de ben cun prato de arroz que cunha IPA ben fría.</p>\n<h2>Os ingredientes</h2>\n<ul><li><strong>Repolo</strong>, cortado en anacos. A receita tradicional usa col china (napa), pero o repolo funciona moi ben.</li><li><strong>Rábano branco</strong> (daikon) en tiras finas.</li><li><strong>Chile coreano en po</strong> (gochugaru), que dá a cor e o picante.</li><li>Ademais, os clásicos da pasta: allo, xenxibre e cebolete. [COMPLETAR: cantidades e se levou salsa de peixe.]</li></ul>\n<p><img src=\"@/assets/blog/kimchi-caseiro/ingredientes.jpg\" alt=\"Repolo cortado, rábano branco en tiras con pasta de chile, un frasco baleiro e o paquete de chile coreano en po\"></p>\n<h2>O proceso</h2>\n<ol><li><strong>Salgar o repolo.</strong> Frégase con sal e déixase repousar un par de horas, removendo de cando en vez, para que solte auga e quede flexible. Despois aclárase e escórrese ben.</li><li><strong>Preparar a pasta.</strong> Mestúrase o chile coreano co allo, o xenxibre e o resto de aderezos, e envólvense nela as tiras de rábano.</li><li><strong>Mesturar todo.</strong> Con luvas, que o chile non perdoa, intégrase a pasta co repolo ata que todo quede ben cuberto.</li><li><strong>Envasar.</strong> Métese nun frasco ben limpo e calcase para que non queden bolsas de aire, deixando un pouco de espazo arriba.</li></ol>\n<p><img src=\"@/assets/blog/kimchi-caseiro/mestura.jpg\" alt=\"Bol co rábano en pasta de chile, repolo e frasco hermético listos para mesturar\"></p>\n<h2>A fermentación</h2>\n<p>Aquí é onde traballan as <strong>bacterias lácticas</strong>: comen os azucres das verduras e producen ácido láctico e CO₂. Por iso durante os primeiros días aparecen burbullas e convén abrir o frasco para que saia o gas.</p>\n<ul><li><strong>1 ou 2 días a temperatura ambiente</strong> para arrincar a fermentación.</li><li>Despois, <strong>á neveira</strong>, onde segue fermentando amodo e gaña acidez semana a semana.</li><li>Se aparece mofo ou un cheiro desagradable (distinto do cheiro fermentado normal), fóra con el.</li></ul>\n<p><img src=\"@/assets/blog/kimchi-caseiro/frasco.jpg\" alt=\"Frasco de kimchi caseiro rematado\"></p>\n<p>[COMPLETAR: como quedou e con que o acompañastes.]</p>\n<p>Se che interesan os fermentados máis alá da cervexa, bótalle un ollo aos nosos <a href=\"@/blog/obradoiros-fermentados/\">obradoiros de cervexa e outros fermentados</a>.</p>"
+}
