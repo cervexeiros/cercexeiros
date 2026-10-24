@@ -173,17 +173,16 @@
       <div class="advento-2025-texto">
         <p class="antetitulo">E o ano pasado?</p>
         <h3>O calendario de 2025</h3>
-        <p>Fixémolo con botellas de cervexa comercial. Foi un bo quentamento. Adiviñas cal foi a do día 1? Toca a tarxeta.</p>
-        <p class="adiviña-texto" id="adiviña-texto"></p>
+        <p>Fixémolo con botellas de cervexa comercial. Foi un bo quentamento. Toca a primeira ficha para descubrir a birra do día 1.</p>
       </div>
-      <button type="button" class="adiviña-tarxeta" id="adiviña" aria-pressed="false" aria-label="Destapar a birra do día 1 de 2025">
-        <img class="agochada" src="assets/advento/dia1-agochada.webp" alt="Tarxeta do día 1 de 2025 coa botella borrosa" width="480" height="853">
-        <img class="destapada" src="assets/advento/dia1.webp" alt="Tarxeta do día 1 de 2025: Weihenstephaner Hefe Weissbier, de Alemaña" width="480" height="853">
-      </button>
-      <div class="advento-2025-miniaturas">
-        <img src="assets/advento/dia4.webp" alt="Día 4 de 2025: Duvel" loading="lazy" width="480" height="853">
-        <img src="assets/advento/dia7.webp" alt="Día 7 de 2025: BrewDog Punk IPA" loading="lazy" width="480" height="853">
-        <img src="assets/advento/dia9.webp" alt="Día 9 de 2025: Samuel Smith Imperial Stout" loading="lazy" width="480" height="853">
+      <div class="advento-2025-fichas">
+        <button type="button" class="ficha-2025 adiviña-tarxeta" id="adiviña" aria-pressed="false" aria-label="Destapar a birra do día 1 de 2025">
+          <img class="agochada" src="assets/advento/dia1-agochada.webp" alt="Ficha do día 1 de 2025 coa botella borrosa" width="480" height="853">
+          <img class="destapada" src="assets/advento/dia1.webp" alt="Ficha do día 1 de 2025: Weihenstephaner Hefe Weissbier" width="480" height="853">
+        </button>
+        <img class="ficha-2025" src="assets/advento/dia4.webp" alt="Ficha do día 4 de 2025: Duvel" loading="lazy" width="480" height="853">
+        <img class="ficha-2025" src="assets/advento/dia7.webp" alt="Ficha do día 7 de 2025: BrewDog Punk IPA" loading="lazy" width="480" height="853">
+        <img class="ficha-2025" src="assets/advento/dia9.webp" alt="Ficha do día 9 de 2025: Samuel Smith Imperial Stout" loading="lazy" width="480" height="853">
       </div>
     </div>
   </div>
@@ -208,12 +207,8 @@
 
 <script>
 (() => {
-  const t = document.getElementById('adiviña'), txt = document.getElementById('adiviña-texto');
-  t.addEventListener('click', () => {
-    const on = t.getAttribute('aria-pressed') !== 'true';
-    t.setAttribute('aria-pressed', on);
-    txt.innerHTML = on ? 'Era unha <strong>Weihenstephaner Hefe Weissbier</strong>. Este ano, latas craft.' : '';
-  });
+  const t = document.getElementById('adiviña');
+  t.addEventListener('click', () => t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true'));
 })();
 </script>
 <script src="assets/js/formulario.js" defer></script>

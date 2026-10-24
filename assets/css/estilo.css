@@ -269,10 +269,13 @@ p, li, figcaption { overflow-wrap: anywhere; }
 .latas-fotos--unha { grid-template-columns: 1fr; max-width: 360px; justify-self: center; }
 .latas-fotos--unha img:last-child { transform: rotate(2deg); }
 .advento-2025 { padding: 32px 0; }
-.advento-2025-caixa { display: grid; grid-template-columns: 1fr auto auto; gap: 24px; align-items: center; background: var(--branco); border: 2px dashed var(--gris-fermentador); border-radius: 16px; padding: 18px 22px; }
-.advento-2025-caixa h3 { font-size: 1.3rem; margin: 0 0 .3em; }
-.advento-2025-caixa p { margin: 0 0 .4em; font-size: .95rem; color: var(--texto-suave); }
-.advento-2025-caixa .adiviña-tarxeta { width: 110px; transform: rotate(-2deg); box-shadow: 0 4px 0 rgba(11,42,74,.9); border-width: 2px; border-radius: 10px; }
-.advento-2025-miniaturas { display: flex; gap: 8px; }
-.advento-2025-miniaturas img { width: 80px; border: 2px solid var(--azul-nocturno); border-radius: 8px; }
-@media (max-width: 760px) { .advento-2025-caixa { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+.advento-2025-caixa { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; background: var(--branco); border: 2px dashed var(--gris-fermentador); border-radius: 16px; padding: 20px 24px; }
+.advento-2025-texto { flex: 1 1 260px; min-width: 0; }
+.advento-2025-texto h3 { font-size: 1.3rem; margin: 0 0 .3em; }
+.advento-2025-texto p { margin: 0; font-size: .95rem; color: var(--texto-suave); }
+.advento-2025-texto .antetitulo { margin-bottom: .3em; }
+.advento-2025-fichas { display: flex; gap: 10px; flex: 0 1 auto; }
+.ficha-2025 { width: 76px; aspect-ratio: 480 / 853; height: auto; border: 2px solid var(--azul-nocturno); border-radius: 8px; background: var(--branco); object-fit: cover; }
+.advento-2025-fichas .adiviña-tarxeta { position: relative; padding: 0; overflow: hidden; transform: none; box-shadow: 0 0 0 3px var(--amarelo-cervexa); cursor: pointer; }
+.advento-2025-fichas .adiviña-tarxeta:hover { transform: none; }
+@media (max-width: 760px) { .advento-2025-caixa { justify-content: center; text-align: center; } .advento-2025-fichas { justify-content: center; } .ficha-2025 { width: 68px; } }
