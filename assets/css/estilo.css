@@ -260,3 +260,7 @@ p, li, figcaption { overflow-wrap: anywhere; }
 .latas-fotos img:last-child { transform: rotate(2deg) translateY(18px); }
 .advento-promo .advento-promo-img { width: min(340px, 75%); }
 .bloque--noite a.boton, .bloque--noite a.boton:hover { color: var(--azul-nocturno); }
+.advento-prezo { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 6px; padding: 10px 18px; border: 3px dashed var(--amarelo-cervexa); border-radius: 14px; }
+.advento-prezo strong { font-family: var(--man); font-size: 2.2rem; line-height: 1; color: var(--amarelo-cervexa); }
+.advento-prezo span { font-weight: 700; }
+@media (max-width: 760px) { .advento-prezo { justify-content: center; } }
