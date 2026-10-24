@@ -254,3 +254,9 @@ p, li, figcaption { overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) { .adiviña-tarxeta img { transition: none; } }
 .advento-galeria { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 760px) { .advento-galeria { grid-template-columns: repeat(2, 1fr); gap: 14px; } .advento-portada { width: min(240px, 65%); } }
+.latas-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.latas-fotos img { border: 3px solid var(--azul-nocturno); border-radius: 14px; box-shadow: var(--sombra); aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+.latas-fotos img:first-child { transform: rotate(-2deg); }
+.latas-fotos img:last-child { transform: rotate(2deg) translateY(18px); }
+.advento-promo .advento-promo-img { width: min(340px, 75%); }
+.bloque--noite a.boton, .bloque--noite a.boton:hover { color: var(--azul-nocturno); }
