@@ -86,7 +86,7 @@ ${indexar ? '' : '<meta name="robots" content="noindex">\n'}<link rel="canonical
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700..800&family=Figtree:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${raiz}assets/css/estilo.css">
+<link rel="stylesheet" href="${raiz}assets/css/estilo.css?v=5">
 ${cabeceiraExtra}</head>
 <body>
 <a class="saltar" href="#contido">Saltar ao contido</a>

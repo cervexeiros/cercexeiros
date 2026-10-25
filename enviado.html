@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Enviado · Cervexeiros Caseiros Pontevedra</title>
+<style>body{font-family:system-ui,-apple-system,sans-serif;background:#F4F1EA;color:#0B2A4A;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px;text-align:center}a{color:#51893D;font-weight:700}</style>
+</head>
+<body>
+<main>
+<h1>Recibido! 🍺</h1>
+<p>Grazas. Escribirémosche moi pronto.</p>
+<p><a href="./">Volver á web</a></p>
+</main>
+<script>
+// Páxina de volta do respaldo (FormSubmit). Se está dentro do iframe oculto, avisa á páxina do formulario.
+(function () {
+  var m = /[?&]id=([^&#]+)/.exec(location.search);
+  var id = m ? decodeURIComponent(m[1]) : '';
+  try { if (window.parent && window.parent !== window) window.parent.postMessage('accp-enviado:' + id, location.origin); } catch (e) {}
+})();
+</script>
+</body>
+</html>
