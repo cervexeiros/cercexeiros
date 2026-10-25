@@ -133,7 +133,7 @@
       </div>
       <div class="campo">
         <label for="a-tel">Teléfono <span>(obrigatorio)</span></label>
-        <input id="a-tel" name="Teléfono" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+ ()-]{9,}" required>
+        <input id="a-tel" name="Teléfono" type="tel" autocomplete="tel" inputmode="tel" data-tel="1" required>
       </div>
       <div class="campo">
         <label for="a-enderezo">Enderezo <span>(obrigatorio)</span></label>
@@ -211,7 +211,7 @@
   t.addEventListener('click', () => t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true'));
 })();
 </script>
-<script src="assets/js/formulario.js" defer></script>
+<script src="assets/js/formulario.js?v=2" defer></script>
 
 </main>
 <footer class="pe">
