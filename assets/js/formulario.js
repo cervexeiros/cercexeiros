@@ -35,27 +35,12 @@
       b.disabled = true; b.textContent = 'Enviando…';
       const nome = f.querySelector('[name="Nome"]')?.value || '';
       const asunto = (f.dataset.asunto || 'Nova mensaxe desde a web') + (nome ? ': ' + nome : '');
-      const datos = new FormData(f);
-      datos.set('_subject', asunto);
-      if (datos.get('email')) datos.set('_replyto', datos.get('email'));
-      const ctrl = new AbortController(); const temporizador = setTimeout(() => ctrl.abort(), 15000);
-      try {
-        const r = await fetch(f.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', body: datos, headers: { Accept: 'application/json' }, signal: ctrl.signal });
-        const j = await r.json().catch(() => ({}));
-        if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || 'Erro ' + r.status);
-        clearTimeout(temporizador); b.textContent = textoBoton; b.disabled = false;
-        amosarOk();
-      } catch (err) {
-        clearTimeout(temporizador);
-        // Plan B: envío clásico do formulario (FormSubmit redirixe de volta á páxina de grazas)
-        const sub = f.querySelector('[name="_subject"]') || Object.assign(document.createElement('input'), { type: 'hidden', name: '_subject' });
-        sub.value = asunto; if (!sub.parentNode) f.appendChild(sub);
-        try { HTMLFormElement.prototype.submit.call(f); }
-        catch {
-          erro.innerHTML = 'Non puidemos enviar o formulario. Proba de novo ou escríbenos a <a href="mailto:cervexeiroscaseirospontevedra@gmail.com">cervexeiroscaseirospontevedra@gmail.com</a>.';
-          erro.hidden = false; b.disabled = false; b.textContent = textoBoton;
-        }
-      }
+      const pon = (n, v) => { let i = f.querySelector(`input[type=hidden][name="${n}"]`); if (!i) { i = document.createElement('input'); i.type = 'hidden'; i.name = n; f.appendChild(i); } i.value = v; };
+      pon('_subject', asunto);
+      const em = f.querySelector('[name="email"]')?.value; if (em) pon('_replyto', em);
+      // Envío clásico (funciona igual en Safari/iPhone, Chrome, Firefox…). FormSubmit redirixe de volta á páxina de grazas.
+      HTMLFormElement.prototype.submit.call(f);
+      setTimeout(() => { b.disabled = false; b.textContent = textoBoton; }, 8000);
     });
   });
 
