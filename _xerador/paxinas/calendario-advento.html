@@ -74,7 +74,7 @@
     <form id="form-advento" class="form form-correo" data-tipo="Calendario Advento 2026" data-asunto="Novo encargo do calendario de Advento 2026" data-ok="encargo-ok" action="https://formsubmit.co/cervexeiroscaseirospontevedra@gmail.com" method="POST" novalidate>
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="__URL__/calendario-advento.html#encargo-ok">
+      <input type="hidden" name="_next" value="__URL__/enviado.html">
       <input type="hidden" name="Pedido" value="Calendario de Advento 2026">
       <input type="text" name="_honey" class="mel" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -166,4 +166,6 @@
   t.addEventListener('click', () => t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true'));
 })();
 </script>
-<script src="assets/js/formulario.js?v=5" defer></script>
+<!-- O código do formulario cárgase sempre fresco (aínda que o navegador garde esta páxina na caché).
+     Sen JavaScript, o formulario envíase igual (FormSubmit → enviado.html). -->
+<script>(function(){var s=document.createElement('script');s.src='assets/js/formulario.js?t='+Math.floor(Date.now()/60000);document.body.appendChild(s);})();</script>

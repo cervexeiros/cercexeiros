@@ -103,7 +103,7 @@
       <input type="hidden" name="_subject" value="Nova solicitude de socio/a desde a web">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://cervexeiros.github.io/cercexeiros/faite-socio.html#grazas">
+      <input type="hidden" name="_next" value="https://cervexeiros.github.io/cercexeiros/enviado.html">
       <input type="text" name="_honey" class="mel" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <div class="campo">
@@ -144,7 +144,9 @@
   </div>
 </section>
 
-<script src="assets/js/formulario.js?v=5" defer></script>
+<!-- O código do formulario cárgase sempre fresco (aínda que o navegador garde esta páxina na caché).
+     Sen JavaScript, o formulario envíase igual (FormSubmit → enviado.html). -->
+<script>(function(){var s=document.createElement('script');s.src='assets/js/formulario.js?t='+Math.floor(Date.now()/60000);document.body.appendChild(s);})();</script>
 
 
 </main>
