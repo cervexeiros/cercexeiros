@@ -174,7 +174,7 @@ function advento_() {
   var c = ss.insertSheet('Comentarios');
   c.getRange(1, 1, 1, ADV.CAB_COM.length).setValues([ADV.CAB_COM]).setFontWeight('bold').setBackground('#0B2A4A').setFontColor('#ffffff');
   c.setFrozenRows(1);
-  c.getRange('H1').setNote('Escribe «Oculto» para agochar un comentario da web (bórrao para volver amosalo). «Vista previa» = probas que só se ven coa ligazón de vista previa.');
+  c.getRange('H1').setNote('Escribe «Oculto» (ou calquera cousa que conteña «ocult») para agochar un comentario da web; bórrao para volver amosalo. «Vista previa» = probas que só se ven coa ligazón de vista previa.');
   [140, 150, 50, 150, 420, 260, 120, 100, 260].forEach(function (w, i) { c.setColumnWidth(i + 1, w); });
   props.setProperty('ADVENTO_ID', ss.getId());
   return ss;
@@ -244,7 +244,7 @@ function datosAdvento_(previa) {
   var comentarios = {};
   cv.forEach(function (r) {
     var dia = String(r[2]).replace(/\D/g, ''), estado = String(r[7] || '').trim().toLowerCase();
-    if (!abertos[dia] || estado === 'oculto') return;
+    if (!abertos[dia] || estado.indexOf('ocult') >= 0) return; // «Oculto», «oculta», «OCULTO »… todo agocha
     if (estado === 'vista previa' && !previa) return;
     (comentarios[dia] = comentarios[dia] || []).push({
       id: String(r[1]), data: r[0] instanceof Date ? r[0].toISOString() : String(r[0]),
