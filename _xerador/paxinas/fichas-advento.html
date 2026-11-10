@@ -1,0 +1,55 @@
+
+<section class="cabeza-paxina adv-cab">
+  <div class="envoltorio">
+    <p class="antetitulo">Reto do Advento 2026</p>
+    <h1>As 24 fichas</h1>
+    <p>Cada día, ás 00:00, ábrese o candado da birra que toca: estilo, nivel de perigo, a súa historia e con que acompañala. E debaixo de cada ficha, o voso recuncho para contar que tal e subir a foto do brinde.</p>
+    <div class="adv-conta" id="adv-conta" hidden>
+      <span class="adv-conta-texto" id="adv-conta-texto">Próxima ficha en</span>
+      <strong class="adv-conta-reloxo" id="adv-conta-reloxo">--:--:--</strong>
+    </div>
+  </div>
+  <div class="garabatos" role="presentation"></div>
+</section>
+
+<p class="adv-previa" id="adv-previa" hidden>👀 <strong>Vista previa da xunta:</strong> todas as fichas están abertas. Os comentarios que deixes aquí só se ven nesta vista previa.</p>
+
+<section class="bloque">
+  <div class="envoltorio">
+    <div class="adv-portas" id="adv-portas" aria-live="polite"></div>
+    <p class="adv-estado" id="adv-estado">Cargando as fichas…</p>
+    <noscript><p class="adv-estado">Para abrir as fichas necesitas ter o JavaScript activado no navegador.</p></noscript>
+  </div>
+</section>
+
+<section class="bloque bloque--branco">
+  <div class="envoltorio dous">
+    <div>
+      <p class="antetitulo">Como vai isto</p>
+      <h2>Unha lata, unha ficha, un brinde</h2>
+      <ol class="pasos">
+        <li><strong>Abre a lata do día.</strong> A ficha correspondente desbloquéase aquí ás 00:00. Nin antes, nin trampas.</li>
+        <li><strong>Le a ficha.</strong> Estilo, alcohol, temperatura, copa, maridaxe e a historia que hai detrás de cada cervexa.</li>
+        <li><strong>Conta que tal.</strong> Deixa o teu comentario e sobe unha foto co teu brinde. Así facemos o calendario entre todos.</li>
+      </ol>
+    </div>
+    <div class="tarxeta adv-normas">
+      <h3>Normas da casa</h3>
+      <ul class="lista-lupulo">
+        <li>Sen spoilers: as fichas pechadas non se poden comentar.</li>
+        <li>Respecto e bo rollo. A crítica, á birra, nunca á persoa.</li>
+        <li>Nas fotos, só xente que estea de acordo en saír.</li>
+        <li>Consumo responsable: o reto é de 24 días, non de 24 latas nunha noite.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="adv-capa" id="adv-capa" hidden>
+  <div class="adv-capa-fondo" data-pechar></div>
+  <article class="adv-ficha" id="adv-ficha" role="dialog" aria-modal="true" aria-labelledby="adv-ficha-titulo" tabindex="-1"></article>
+</div>
+<div class="adv-aviso" id="adv-aviso" role="status" hidden></div>
+
+<!-- O código cárgase sempre fresco (aínda que o navegador garde esta páxina na caché). -->
+<script>(function(){var s=document.createElement('script');s.src='assets/js/advento.js?t='+Math.floor(Date.now()/60000);document.body.appendChild(s);})();</script>

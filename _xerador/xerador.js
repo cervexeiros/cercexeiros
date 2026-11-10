@@ -86,7 +86,7 @@ ${indexar ? '' : '<meta name="robots" content="noindex">\n'}<link rel="canonical
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700..800&family=Figtree:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${raiz}assets/css/estilo.css?v=5">
+<link rel="stylesheet" href="${raiz}assets/css/estilo.css?v=7">
 ${cabeceiraExtra}</head>
 <body>
 <a class="saltar" href="#contido">Saltar ao contido</a>
@@ -243,6 +243,7 @@ export const PAXINAS = [
   { ficheiro: 'quen-somos.html', fragmento: 'quen-somos', actual: 'quen-somos.html', titulo: 'Quen somos', descricion: 'Quen somos: a Asociación de Cervexeiros Caseiros de Pontevedra, a nosa misión, visión e valores.' },
   { ficheiro: 'faite-socio.html', fragmento: 'faite-socio', actual: 'faite-socio.html', titulo: 'Faite socio/a', descricion: 'Faite socio/a da Asociación de Cervexeiros Caseiros de Pontevedra por 20 € ao ano: obradoiros, catas, elaboracións e compras conxuntas.' },
   { ficheiro: 'calendario-advento.html', fragmento: 'calendario-advento', actual: null, titulo: 'Calendario de Advento cervexeiro 2026', descricion: '24 cervexas craft en lata: encarga o calendario de Advento cervexeiro 2026 da Asociación de Cervexeiros Caseiros de Pontevedra.', imaxe: 'assets/advento/og-calendario-2026.jpg' },
+  { ficheiro: 'fichas-advento.html', fragmento: 'fichas-advento', actual: null, titulo: 'As 24 fichas do calendario de Advento 2026', descricion: 'Reto do Advento 2026: cada día ábrese a ficha da cervexa que toca. Historia, estilo, maridaxe e os vosos comentarios e fotos.', imaxe: 'assets/advento/og-calendario-2026.jpg' },
   { ficheiro: 'contacto.html', fragmento: 'contacto', actual: 'contacto.html', titulo: 'Contacto', descricion: 'Contacta coa Asociación de Cervexeiros Caseiros de Pontevedra por correo ou Instagram.' },
 ];
 
@@ -280,7 +281,7 @@ export function redireccion(destinoAbs) {
 export function sitemap(posts, cfg) {
   const hoxe = new Date().toISOString().slice(0, 10);
   const urls = [
-    ['', hoxe, '1.0'], ['quen-somos.html', null, '0.7'], ['faite-socio.html', null, '0.8'], ['contacto.html', null, '0.5'], ['calendario-advento.html', hoxe, '0.9'], ['blog/', hoxe, '0.9'],
+    ['', hoxe, '1.0'], ['quen-somos.html', null, '0.7'], ['faite-socio.html', null, '0.8'], ['contacto.html', null, '0.5'], ['calendario-advento.html', hoxe, '0.9'], ['fichas-advento.html', hoxe, '0.8'], ['blog/', hoxe, '0.9'],
     ...publicadas(posts).map(p => [`blog/${p.slug}/`, String(p.actualizado || p.data).slice(0, 10), '0.8']),
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
